@@ -1,15 +1,18 @@
 *{ /* para todos os elementos da pagina */
     box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
 }
-:root{/* variaveis */
+:root{/* variaveis   --nao pode ter espaço, use traços*/
     --bg-color: black;
     --bg-second: #444;
     --font-color:white;
+    --font-size: 25px;
+   
 }
 
 body{
     margin: 0px;
-    background-color: var(--bg-color); /* chamando variavel */
+    background-color: var(--bg-color); /* chamando variavel  */ 
+    font-size: var(--font-size);
 }
 
 h1{
@@ -20,3 +23,17 @@ h1{
     background-color: var(--bg-second);
     color: var(--font-color2,red); /* caso n encontre a var, usa a segunda opção */
 }
+
+@media(max-width:450px){
+   :root{
+        --font-size: 15px;
+    }
+}
+
+/*
+-----------------
+* = todo mundo
+:root = elemento raiz de um documento, mas como a gente sempre usa com HTML ele equivale a tag html
+html = tag html 
+-----------------
+*/
