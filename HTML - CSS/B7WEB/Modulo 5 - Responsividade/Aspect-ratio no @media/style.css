@@ -1,0 +1,20 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+@media(aspect-ratio:1/1){
+    body{
+        background-color: #900000;
+    }
+}
+
+@media (min-aspect-ratio : 3/2){
+    body{
+        background-color: blue;
+    }
+}
