@@ -1,0 +1,18 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+img{
+    width: 400px;
+    height: 100px;
+    object-fit: fill; /* opcao padrao; */
+    object-fit: cover;  /* corta a imagem para caber */
+    object-fit: none; /* corta sem redimensionar */
+    object-fit: scale-down;
+    
+}

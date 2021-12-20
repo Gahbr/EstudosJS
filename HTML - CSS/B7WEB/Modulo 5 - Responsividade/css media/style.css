@@ -1,0 +1,59 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+    background-color: rgb(207, 180, 27);
+    text-transform: capitalize; 
+}
+h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+table,td { 
+    border: 2px solid black;
+}
+
+@media only print {
+    h1{
+       font-size: 70px;
+       font-weight: normal;
+}
+    table,td{
+        border: 0;
+}
+}
+
+
+@media(min-width:1000px){
+    body{
+        background-color: darkblue;
+        font-size: 70px;
+    }
+}
+@media(min-width:700px) and (max-width:1000px){
+    body{
+        background-color: purple;
+    } h1{
+        font-size: 50px;
+    }
+}
+
+@media(min-width:300px) and (max-width:700px){
+    body{
+        background-color: royalblue;
+    }
+    h1{
+        font-size: 40px;
+    }
+}
+@media(max-width:300px){
+    h1{
+        font-size: 14px;
+    }
+}
+
+
+ 
