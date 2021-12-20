@@ -1,0 +1,22 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+:root{/* variaveis */
+    --bg-color: black;
+    --bg-second: #444;
+    --font-color:white;
+}
+
+body{
+    margin: 0px;
+    background-color: var(--bg-color); /* chamando variavel */
+}
+
+h1{
+    color: var(--font-color);
+}
+
+.container{
+    background-color: var(--bg-second);
+    color: var(--font-color2,red); /* caso n encontre a var, usa a segunda opção */
+}
