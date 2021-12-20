@@ -1,0 +1,37 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+/* altura/largura para pegar proporcao */
+body{
+    margin: 0px;
+    background-color: #6f0000;
+}
+h1{
+    color: #f2ff00;
+    text-align: center;
+}
+.video{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.video-area{
+    position: relative;
+    height: 0px;
+    background-color: #ccc;
+    padding: 0px 0px 56.25%;
+}
+
+.video-area iframe{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    
+    height: 100%;/* para ocupar a area de video */
+    width: 100%;
+    border: 0px;
+
+}
