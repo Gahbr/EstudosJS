@@ -1,0 +1,17 @@
+*{
+    border: 0px;
+}
+
+body{
+    text-align: center;
+    background-color: #045f7e;
+    color: burlywood;
+}
+
+h1{
+    color: rgb(184, 164, 140);
+}
+.botao{
+    background-color: burlywood ;
+    border-radius: 50%;
+}
