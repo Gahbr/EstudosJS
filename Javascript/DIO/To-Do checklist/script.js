@@ -1,30 +1,32 @@
 function add() {
- 
-    var input = document.getElementById('texto').value;
-    var lista = document.getElementById("lista");
 
-    // criando input
-    var checkbox = document.createElement('input');
+var input = document.getElementById('texto').value;
+var lista = document.getElementById("lista");
 
-    // definindo os atributos da checkbox
-    checkbox.type = "checkbox";
-    checkbox.value = "value";
-    checkbox.id = "id";
+// criando input
+var checkbox = document.createElement('input');
 
-    // criando label para texto da checkbox
-    var label = document.createElement('label');
+// definindo os atributos da checkbox
+checkbox.type = "checkbox";
+checkbox.value = "value";
+checkbox.id = "id";
 
-    // colocando atributos para a tab label
-    label.htmlFor = "id";
+// criando label para texto da checkbox
+var label = document.createElement('label');
 
-    // dando append no texto criado para a tag label
-    label.innerHTML += input + "</br>"
+// colocando atributos para a tab label
+label.htmlFor = "id";
 
- // dando append na checkbox e label para a div
-        lista.appendChild(checkbox);
-        lista.appendChild(label);
-        }
+// dando append no texto criado para a tag label
+label.innerHTML += input + "</br>"
+
+// dando append na checkbox e label para a div
+    lista.appendChild(checkbox);
+    lista.appendChild(label);
+    }
 
 function limparTela(){
-    document.getElementById('label').innerHTML = "";
+document.getElementById('lista').innerHTML = "";
 }
+
+// Feito por Gabriel Ribeiro -- Github: github.com/Gahbr  
