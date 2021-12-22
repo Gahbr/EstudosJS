@@ -3,6 +3,11 @@ function add() {
 var input = document.getElementById('texto').value;
 var lista = document.getElementById("lista");
 
+
+if(input==0){
+    alert("Campo em branco. Tente novamente!");
+} else{
+    
 // criando input
 var checkbox = document.createElement('input');
 
@@ -24,6 +29,7 @@ label.innerHTML += input + "</br>"
     lista.appendChild(checkbox);
     lista.appendChild(label);
     }
+}
 
 function limparTela(){
 document.getElementById('lista').innerHTML = "";

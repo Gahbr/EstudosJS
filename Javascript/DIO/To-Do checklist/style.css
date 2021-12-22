@@ -30,6 +30,7 @@ background-color: black;
 color: lightblue;
 }
 
+
 :checked + label {
 text-decoration: line-through;
 color: grey;
