@@ -1,0 +1,17 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.degrade{
+    width: 500px;
+    height: 200px;
+    background: blue; /*se navegador nao tiver suporte do degrade fica apenas azul  */
+    background:linear-gradient(white,blue, red);
+    background:-moz-linear-gradient(white,blue,red); /* navegador mozilla firefox */
+    background:-o-linear-gradient(white,blue,green)
+}
