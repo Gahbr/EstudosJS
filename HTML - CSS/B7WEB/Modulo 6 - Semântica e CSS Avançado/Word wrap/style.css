@@ -1,0 +1,15 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.borda{
+    width: 158px;
+    height: 200px;
+    border: 1px solid #000;
+    word-wrap: break-word;
+}
