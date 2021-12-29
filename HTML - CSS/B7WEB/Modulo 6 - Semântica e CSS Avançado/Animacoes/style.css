@@ -1,0 +1,25 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+@keyframes exemplo{ /* aplicando animacoes */
+    0% {background-color: red; top: 0px; left: 0px;}
+    25%{background-color: yellow; top: 0px; left: 200px;}
+    50%{background: green; top: 200px; left: 200px;}
+    75%{background-color: blue; top: 200px; left: 0px;}
+    100%{background-color: red; top: 0px; left: 0px;}
+}
+
+body{
+    margin: 0px;
+}
+
+.exemplo{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-color: green;
+    animation-name: exemplo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
