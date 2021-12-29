@@ -1,0 +1,22 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+figure{
+    padding: 5px;
+    margin:0;
+    border: 1px solid #ccc
+
+}
+
+figcaption{
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+}
