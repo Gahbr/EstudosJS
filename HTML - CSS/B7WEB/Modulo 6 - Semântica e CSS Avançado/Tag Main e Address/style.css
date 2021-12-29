@@ -1,0 +1,41 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+header{
+    background-color: #333;
+    min-height: 100px;
+}
+aside{
+    width: 200px;
+    background-color: #888;
+}
+main{
+    flex: 1;
+    background-color: #999;
+}
+section{
+    display: flex;
+    min-height: 600px;
+}
+footer{
+    background-color: grey;
+min-height: 100px;
+}
+
+address{
+    font-weight: bold;
+}
+a:link{
+    text-decoration: none;
+    color: purple;
+}
+a:visited{
+    text-decoration: none;
+    color: purple;
+}
