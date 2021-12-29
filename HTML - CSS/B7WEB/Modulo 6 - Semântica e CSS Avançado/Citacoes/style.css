@@ -1,0 +1,26 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+@keyframes teste{
+    0% {color: yellow;  ;}
+    25%{color: rgb(0, 238, 255); }
+    75%{color: blue; }
+
+}
+
+
+
+body{
+    margin: 0px;
+}
+
+q{
+    font-style: italic;
+    color: #555555;
+    
+    animation-name: teste;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
