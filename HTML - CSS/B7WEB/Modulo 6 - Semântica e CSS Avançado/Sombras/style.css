@@ -1,0 +1,25 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.exemplo{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    box-shadow: 10px 10px 10px grey;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 75px;
+}
+
+.texto{
+    margin: auto;
+    text-shadow: 5px 10px 10px grey;
+    color: green;
+    text-align: center;
+}
