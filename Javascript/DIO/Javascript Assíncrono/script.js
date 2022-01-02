@@ -1,23 +1,22 @@
-const BASE_URL = 'https://thatcopy.pw/catapi/rest/';
+function loadPosts(){
 
-const getCats= async() => {
-    try{
-        const data = await fetch(BASE_URL);
-		const json = await data.json();
-        return json.webpurl;
+    document.getElementById("posts").innerHTML = 'Carregando...</br>';
+      fetch ('https://thatcopy.pw/catapi/rest/') //retorna uma promise 
+      
+          .then(function(resultado){
+            return resultado.json();
+          })
+          .then(function(json){
+              var elem = document.createElement("img");
+              elem.src = json.url;
+              document.getElementById("posts").innerHTML = '';
+              document.getElementById("posts").appendChild(elem);
+             
 
-    } catch(e){
-        console.log(e.message);
-    }
-};
+          })
+          .catch(function(){
+              console.log("deu problema!");
+          })
+      }
+      
 
-const loadImg = async () => {
-	const img = document.getElementsByTagName('img')[0];
-	img.src = await getCats();
-};
-
-
-loadImg();
-
-const catBtn = document.getElementById('change-cat');
-catBtn.addEventListener('click',loadImg);
