@@ -1,0 +1,71 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+    text-align: center;
+}
+
+.container{
+    display: flex;/* Exibição em linha (o padrão do flex-direction é row). */
+    background-color: #babaca;
+    flex-direction: row; /* padrao */
+    margin: 10px;
+    
+   
+}
+
+.container2{
+    display: flex;
+    background-color: #babaca;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.container3{
+    display: flex;
+    background-color: #333;
+    margin: 10px;
+    flex-direction: row;
+}
+
+
+.container div, 
+.container2 div {
+    background-color: #ff0000;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    
+}
+
+.div1{
+    flex:1;  /* divide e preenche o espaco */
+    background-color: tomato;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+.div2{
+    flex:1;  /* divide e preenche o espaco */
+    background-color: tomato;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+.div3{
+    flex:1;  /* divide e preenche o espaco */
+    background-color: tomato;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+.div4{
+    flex:3;  /* 3x maior q os outros elementos*/
+    background-color: tomato;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
