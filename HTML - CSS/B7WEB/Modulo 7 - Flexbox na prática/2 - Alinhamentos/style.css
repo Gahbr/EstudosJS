@@ -1,0 +1,31 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-end; /* alinhamento linha principal */
+    align-items: center;
+    height: 500px;
+    background-color: thistle;
+}
+
+.container div{
+    background-color: #ff0000;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+   /*  flex-flow: row wrap;  */   /* flex direction e flexwrap  */
+    
+}
+.num{
+    align-self: flex-start; /* alinha so o item */
+}
+/* jogo para treinar: http://flexboxfroggy.com/ */
