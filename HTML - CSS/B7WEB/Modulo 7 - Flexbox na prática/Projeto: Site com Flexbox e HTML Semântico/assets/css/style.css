@@ -4,6 +4,7 @@
 body{
   margin: 0;
   padding: 0;
+  
 
 }
 header{
@@ -132,6 +133,13 @@ display: flex;
 
 }
 
+.horarios{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #6c95a7;
+}
+
 .banner_desc{
     font-size: 12px;
     margin-top: 20px;
@@ -147,8 +155,317 @@ display: flex;
     text-decoration: none;
 }
 
+#geral{
+    display: flex;
+    justify-content:center ;
+}
 
+#geral section{
+    flex: 2;
+    
+}
+
+#geral aside{
+    flex: 1;
+    
+}
+
+.widget_title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.widget_title_text{
+    color: #000000;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.widget_title_bar{
+    width: 50px;
+    height: 2px;
+    background-color: #36a9e1;
+    margin-top: 10px;
+}
+
+.widget_box{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.box_container{
+    background-color: #36a9e1;
+    height: 150px;
+    width: 150px;
+    
+}
+.box_container:hover{  
+    background-color: #003e5e;
+}
+
+.widget_desc{
+    text-justify: auto;
+    
+    border-bottom: 20px
+}
+
+hr{
+    color: cornsilk;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article{
+    flex: 1;
+    min-width: 300px;
+    margin-right: 20px;
+}
+
+article a {
+    text-decoration: none;
+}
+
+article .news_data {
+    display: flex;
+}
+
+.news_posted_at{
+     background-color: #2b4c99;
+     color: white;
+     font-size: 12px;
+     padding: 10px;
+     margin-right: 2px;
+}
+
+article .news_comments{
+    background-color: #39aae1;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+article .news_thumbnail{
+    margin-top: 30px;
+}
+article .news_thumbnail img{
+    width: 100%;
+    height: auto;
+}
+article .news_title{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: black;
+    font-size: 23px;
+}
+
+article .news_desc{
+    color: #333333;
+    line-height: 20px;
+    font-size: 14px;
+    margin-bottom: 30px;
+
+}
+
+/* footer */
 
 footer{
+background-color: #1e1e1e;
+display: flex;
+justify-content: center;
+}
+
+.footer_menu{
+    display: flex;
+    flex: 1;
+}
+.fm_title {
+    margin-bottom: 10px;
+}
+
+.fm_1, .fm_2, .fm_3 {
+    flex: 1;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fm_1{
+    color: white;
+    background-color:#39aae1 ;
+}
+
+.fm_2{
+    color: white;
+    background-color:#0079c7 ;
+}
+
+.fm_3{
+    color: white;
+    background-color:#2b4c99 ;
+}
+.fm_desc{
+    font-size: 13px;
+    
+}
+
+.fm_desc a{
+    text-decoration: none;
+    color: white
+}
+.fm_desc a:hover{
+    text-decoration: underline;
+}
+.flexColumn{
+    flex-direction: column;
+}
+.footer_area{
+    display: flex;
+    color: white;
+}
+
+.footer_area_item{
+    flex: 1;
+    padding-right: 20px;
+}
+
+footer .widget_title_text{
+    color: white;
+}
+
+.footer_copy{
+    border-top: 1px solid #2c2c2c;
+    height: 40px;
+    line-height: 40px;
+    color: #5c5c5c;
+    margin-top: 30px;
+}
+.about{
+    line-height: 20px;
+}
+
+.about_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .widget_body{
+    font-size: 12px;
+    color: #909090;
+}
+
+.post1{
+    margin-bottom: 10px;
+}
+.post_age{
+    color: #42B3E5;
+    margin-bottom: 20px;
+}
+
+.footer_area_item ul{
+    margin-left: 20px;
+    
+}
+
+.footer_area_item li{
+    
+    line-height: 17px;
+}
+
+.footer_area_item a{
+    text-decoration: none;
+    color: #D5D5D5;
+}
+
+.footer_area_item a:hover{
+    text-decoration: underline;
+}
+
+.menuMobile{
+    display: none;
+    width: 40px;
+    height: 40px;
+    
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+}
+
+.mn_line{
+    height: 3px;
+    background-color: blue;
+}
+
+/* responsividade */
+@media (max-width:600px){
+
+    .banner_headline h1{
+        font-size: 55px;
+    }
+    .banner_headline h2{
+        font-size: 17px;
+    }
+
+    .banner_options{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    #geral section, aside{
+        padding: 20px;
+    }
+
+    .footer_menu{
+        flex-direction: column;
+    }
+
+    .footer_area{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer_copy{
+        text-align: center;
+    }
+
+    header .container{
+        flex-direction: row;
+    }
+
+    nav ul{
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: white;
+    }
+
+    header{
+        height: auto;
+    }
+
+    .logo{
+        padding-left: 20px;
+    }
+
+    .menuMobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+
+
+
+
 
 }
