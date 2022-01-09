@@ -1,0 +1,305 @@
+/**
+	TABLE OF CONTENTS
+	--------------------------
+	1. Tags
+   2. Sections
+	3. Media Queries
+	4. Footer
+
+*/
+
+
+/*
+-----------------------
+| 1. Tags
+-----------------------
+*/
+body {
+    font-family: 'PT Serif', serif;
+      margin: 0;
+  }
+  
+  
+  /*
+  -----------------------
+  | 2. Sections
+  -----------------------
+  */
+  .section {
+      margin-top: -25px;
+      padding: 5%;
+      min-height: auto;
+      background: #E2D5C6;
+  }
+  
+  .section-fold {
+      background: #E2D5C8;
+      background: url(assets/images/texture.png);
+      background-size: cover;
+      background-position: center;
+  }
+  
+  .container {
+      max-width: 1024px;
+      margin: 0 auto;
+  }
+  
+  
+  /*
+  -----------------------
+  | 2.1 Fold
+  -----------------------
+  */
+  .fold-container {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .fold-title {
+      position: relative;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10%;
+      text-align: center;
+  }
+  
+  .fold-title h1 {
+      text-transform: uppercase;
+      font-size: 3em;
+      font-weight: 700;
+      line-height:.9em;
+      margin-top: 0;
+      margin-bottom: .5em;
+      color: #1D0C0C;
+  }
+  
+  .fold-title h3 {
+      color: #784F49;
+      margin-bottom: 0;
+      text-transform: uppercase;
+  }
+  
+  .fold-image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  
+  .fold-image img {
+      margin: 0 auto;	
+      max-width: 100%;
+        display: block;
+        height: auto;
+      width: 70%;
+      padding: 10px;
+  }
+  
+  .fold-image figcaption {
+      text-align: center;
+  }
+  
+  .btn-fold {
+      background: #C49173;
+      
+      align-self: center;
+      padding: .7em 2em;
+      border-radius: 2em;
+      color: #fff;
+      text-decoration: none;
+  }
+  
+  .btn-fold:hover {
+      background: #1D0C0C;
+      animation: ease-in-out 3s;
+  }
+  
+  .gif{
+      
+      display: flex;
+      justify-content: center;
+      object-fit: fill;
+      border-radius: 50%;
+  }
+  .gif img{
+    margin: 40px;
+    border-radius: 50%;
+  }
+  /*
+  -----------------------
+  | 2.2 Abstract
+  -----------------------
+  */
+  .section-abstract {
+      background: #F1E6E0;
+      padding: 5% 5% 12% 5%;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .section-abstract h1 {
+      font-size: 2.3rem;
+      line-height: 1.05em;
+  }
+  
+  .section-abstract p {
+      font-size: 1.1em;
+      line-height: 1.4em;
+  }
+  
+  .section-abstract .text-container {
+      display: grid;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+  }
+  li{
+      padding-right: 20px;
+      padding-bottom: 20px;
+  }
+  
+  /*
+  -----------------------
+  | 2.2 CTA (Call To Action)
+  -----------------------
+  */
+  .section-cta {
+      background: #1D0C0C;
+      color: #fff;
+      text-align: center;
+  }
+  
+  .section-cta h1 {
+      color: #D4B194;
+      font-size: 2.3em;
+      margin-bottom: 30px;
+  }
+  
+  .section-cta a {
+      margin-top: 1.2em;
+      border: solid 2px #C39175;
+      width: 8em;
+      margin: 0 auto;
+      margin-right: 10px;
+  }
+  
+  .section-cta > a:hover {
+      border: solid 2px #C39175;
+  }
+  
+  
+  /*
+  -----------------------
+  | 3. Media queries
+  -----------------------
+  */
+  @media (min-width: 1178px) {
+      .fold-container {
+          flex-direction: row;
+      }
+      
+      .fold-title {
+          text-align: left;
+      }
+      
+      .fold-title h1 {
+          font-size: 5em;
+      }
+      
+      .btn-fold {
+          align-self: flex-start;
+      }
+      
+      .fold-image {
+          position: relative;
+          width: 100%;
+          height: auto;
+      }	
+      
+      .fold-image figcaption {
+          align-self: center;
+      }
+      
+      .section-abstract .text-container {
+          grid-template-columns: 40% 55%;
+          grid-column-gap: 5%;
+      }
+  
+  }
+  
+  @media (max-width: 600px){
+    .text-container {
+        line-height: 1.2em;
+        width: 400px;
+    }
+
+    .gif img{
+        width: 250px;
+    }
+}  
+    @media (max-width: 480px){ 
+        .text-container {
+            
+            width: 300px;
+        }
+    
+        .gif img{
+            width: 200px;
+        }
+         #title{
+            font-size: 1.7rem;
+        }
+
+        .btn-fold{
+            padding: 8px;
+        }
+  }
+  @media (max-width: 320px){ 
+    .text-container { 
+        font-size: 0.8rem;
+        width: 300px;
+    }
+
+    .gif img{
+        width: 200px;
+    }
+    #title{
+        font-size: 1.2rem;
+    }
+    .btn-fold{
+        padding: 0px;
+    }
+  }
+
+  
+  /*
+  -----------------------
+  | 4. Footer
+  -----------------------
+  */
+  .footer {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 1.2em;
+      background-color: #333;
+      color: #1D0C0C;
+  }
+  
+  .footer svg {
+      margin: auto .2em;
+      fill: #E8413B;
+  }
+  
+  .footer a {
+      padding-left: .3em;
+      color: #1D0C0C;
+  }
+  
