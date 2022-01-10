@@ -1,0 +1,68 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+    list-style: none;
+}
+
+
+body{
+    margin: 0px;
+    background-color: rgb(248, 242, 242);
+}
+header h1{
+    color: darkolivegreen;
+    text-align: center;
+}
+
+.titulo{
+    align-self: start;
+    font-weight: bold;
+    color: rgb(2, 65, 2)
+}
+.container{
+    background-color: rgb(149, 199, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 400px;
+    width: 500px;
+    border-radius: 2em;
+    padding: 20px 20px 20px 20px;
+}
+.input{
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+    
+}
+
+
+
+
+.informacoes{
+    padding-top: 10px;
+    align-self: flex-start;
+}
+.endereco_container{
+    padding-top: 10px;
+    align-self: flex-start;
+    
+}
+.cartao_container{
+    padding-top: 10px;
+    align-self: flex-start;
+}
+
+.informacoes li {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 103px 5px 5px;
+    margin-bottom: 5px;
+}
+
+ol{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
