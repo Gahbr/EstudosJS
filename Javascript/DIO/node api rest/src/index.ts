@@ -1,10 +1,22 @@
-import express, {Request,Response,NextFunction} from 'express'; //gerenciador de rotas http
+import express from 'express'; //gerenciador de rotas http
+import statusRoute from './routes/status.route';
+import usersRoute from './routes/users.route';
+
+
 
 const app = express();
-app.get('/status', (req: Request, res: Response, next:NextFunction)=> {
-    res.status(200).send({foo:'parakeet keetson'})
-})
 
+//configuracoes da aplicacao
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+//configurações de rotas
+app.use(usersRoute);
+
+app.use(statusRoute)
+
+
+//Inicialização do servidor
 app.listen (3000, ()=>{
     console.log("Aplicação executando na porta 3000.");
     
