@@ -1,5 +1,6 @@
 import { Router,NextFunction,Request,Response } from "express";
 import {StatusCodes} from 'http-status-codes';
+import { DatabaseError } from "pg";
 import userRepository from "../repositories/user.repository";
 
 // get / users
@@ -16,9 +17,15 @@ usersRoute.get('/users', async(req: Request, res:Response, next:NextFunction)=>{
 });
 
 usersRoute.get('/users/:uuid', async(req:Request<{uuid: string}>, res:Response, next:NextFunction)=>{
+    
+    try {
     const uuid = req.params.uuid;
     const user = await userRepository.findByID(uuid);
     res.status(StatusCodes.OK).send(user);
+    } catch (error) {
+       next(error)
+    }
+    
 });
 
 usersRoute.post('/users', async(req:Request, res:Response, next:NextFunction)=> {
