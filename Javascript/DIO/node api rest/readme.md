@@ -10,6 +10,7 @@ Este é um projeto desenvolvido durante algumas lives para dissiminação de con
 * Node.js
 * Express Js
 * Elephant SQL (Postgre)
+* JWT(JSON Web Tokens) 
   
 
 ## Composição do nosso projeto
