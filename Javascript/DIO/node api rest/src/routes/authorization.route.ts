@@ -11,7 +11,7 @@ const authorizationRoute = Router();
 authorizationRoute.post('/token',basicAuthenticationMiddleware, async(req:Request,res:Response,next:NextFunction)=>{
     try {
        const user = req.user;
-       
+
        if(!user){
         throw new ForbiddenError('Usuário não informado');
        };
@@ -22,8 +22,6 @@ authorizationRoute.post('/token',basicAuthenticationMiddleware, async(req:Reques
         const jwt = JWT.sign(jwtPayload,secretKey,jwtOptions);
 
         res.status(StatusCodes.OK).json({token:jwt});
-
-
 
 
     } catch (error) {
