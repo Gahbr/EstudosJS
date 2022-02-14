@@ -1,0 +1,26 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+div{
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+}
+
+div:first-of-type {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  
+}
+
+div:last-child{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
