@@ -1,0 +1,18 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+    background-image: url(Parakeeets.jpg);
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,0, 0, 0.4);
+    height: 400px;
+    width: 400px;
+    margin-left: 500px;
+}

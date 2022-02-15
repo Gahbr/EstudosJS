@@ -1,0 +1,46 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+    text-align: center;
+}
+
+div:nth-child(2){
+    background-color: red;
+}
+
+div:nth-last-child(2){
+    background-color: red;
+}
+
+
+span::before{
+    content: '=>';
+}
+
+span::after{
+    content: '<=';
+}
+
+/* before e after */
+
+.balao{
+    background-color: blue;
+    display: inline-block;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.balao::after{
+    content: '';
+    display: block;
+    position: absolute;
+    margin-left: 150px;
+    top: 153px;
+    border: 20px solid;
+    border-color: transparent transparent transparent blue;
+}
