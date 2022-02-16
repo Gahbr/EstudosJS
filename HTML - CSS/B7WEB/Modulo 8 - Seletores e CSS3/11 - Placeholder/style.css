@@ -1,0 +1,32 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.input{
+    width: 400px;
+    height: 50px;
+    font-size: 27px;
+    color: red;
+}
+
+.input::placeholder{ /* todos */
+    color: green
+    ;
+}
+
+.input::-webkit-input-placeholder{/* edge,webkit, blink */
+    color: red;
+}
+
+.input:-moz-input-placeholder{/* Firefox */
+    color: red;
+}
+
+.input:-ms-input-placeholder{/* IE10 e 11 */
+    color: red;
+}

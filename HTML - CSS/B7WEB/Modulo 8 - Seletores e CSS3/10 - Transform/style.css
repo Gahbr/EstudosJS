@@ -1,0 +1,21 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+div{
+    background-color: #ff0000;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transform: scale(0.5,);
+    transform:rotate(0deg);
+    transform: skew(0deg,0deg);
+}
