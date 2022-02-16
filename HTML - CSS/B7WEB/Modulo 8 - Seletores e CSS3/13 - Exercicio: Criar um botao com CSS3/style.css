@@ -1,0 +1,25 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+    background-color: lightgrey;
+}
+
+button{
+    margin-top: 200px;
+    margin-left: 200px;
+    height: 50px;
+    width: 150px;
+    border-radius: 2em;
+    background-color: skyblue;
+    color: white;
+    font-size: 20px;
+    
+}
+
+button:hover{
+    background-color: steelblue;
+}
