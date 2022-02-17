@@ -1,0 +1,2 @@
+tsc src/script.ts --outDir public || para criar js na pasta public
+tsc src/script.ts --noEmitOnError para nao emitir js caso haja erro
