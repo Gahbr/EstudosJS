@@ -10,8 +10,8 @@ body{
 
 .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: 100px 50px 50px  ;
+    grid-template-columns: 1fr repeat(2, 1fr); 
+    grid-template-rows:  repeat(1,1fr);
     gap:10px ;
   /* ou:
      grid-column-gap:10px;
