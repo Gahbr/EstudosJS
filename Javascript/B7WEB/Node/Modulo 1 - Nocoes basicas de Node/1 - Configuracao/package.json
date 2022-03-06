@@ -11,6 +11,10 @@
   "author": "gabriel ribeiro",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^17.0.21"
+    "@types/node": "^17.0.21",
+    "@types/validator": "^13.7.1"
+  },
+  "dependencies": {
+    "validator": "^13.7.0"
   }
 }

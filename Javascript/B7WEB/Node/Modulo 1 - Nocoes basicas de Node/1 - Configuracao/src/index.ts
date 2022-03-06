@@ -1,4 +1,12 @@
-let nome = "Parakeet"
-let idade = 4;
+import Matematica  from './Matematica';
 
-console.log("Meu nome é " + nome + " e eu tenho " + idade + " anos.");
+let n1:number = 2;
+let n2:number = 5;
+
+
+console.log(`Soma: ${Matematica.somar(n1,n2)}`);
+
+console.log(`Multiplicação: ${Matematica.multiplicar(n1,n2)}`);
+
+console.log(`Subtração: ${Matematica.subtrair(n1,n2)}`);
+
