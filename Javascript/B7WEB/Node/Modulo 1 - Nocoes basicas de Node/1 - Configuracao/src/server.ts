@@ -8,6 +8,9 @@ const server = express ();
 server.use('/', mainRoutes); //usar as rotas de outro arquivo
 server.use('/painel', painelRoutes); // atencao nos prefixos
 
+server.use((req:Request,res : Response)=>{ //erro 404
+    res.status(404).send('Página não encontrada');
+})
 
 
 server.listen(80); //abre o server na porta 
