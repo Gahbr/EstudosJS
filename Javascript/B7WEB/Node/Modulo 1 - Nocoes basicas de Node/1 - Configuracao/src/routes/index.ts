@@ -53,16 +53,18 @@ router.get ('/nome', (req:Request, res:Response)=>{
 });
 
 router.get('/idade' , (req:Request, res:Response) => {
+    res.render('pages/idade');
+});
+
+router.post('/idade-resultado', (req:Request, res:Response)=>{
     let mostrarIdade :boolean = false;
     let idade:number = 0;
 
-    if(req.query.ano){
-        let anoNascimento : number = parseInt(req.query.ano as string);
+    if(req.body.ano){
+        let anoNascimento : number = parseInt(req.body.ano as string);
         let anoAtual : number  = new Date().getFullYear();
          idade = anoAtual - anoNascimento;
          mostrarIdade = true;
-
-
     }
     res.render('pages/idade', {idade,mostrarIdade});
 })

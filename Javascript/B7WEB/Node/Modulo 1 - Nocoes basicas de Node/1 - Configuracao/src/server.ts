@@ -15,6 +15,7 @@ server.engine('mustache', mustache());
 
 
 server.use('/static',express.static(path.join(__dirname,'../public'))); // torna a pasta publica estatica e acessivel
+server.use(express.urlencoded({extended:true}));  //habilitando para manipular dados via POST dentro da rota 
 server.use('/', mainRoutes); //usar as rotas de outro arquivo
 server.use('/painel', painelRoutes); // atencao nos prefixos
 
