@@ -1,10 +1,20 @@
 import express, {Request,Response} from 'express';
 import mainRoutes from './routes/index';
 import painelRoutes from './routes/painel';
+import path from 'path';
+import mustache from 'mustache-express';
 
 const server = express ();
 
+// console.log(path.join(__dirname,'../public'));
 
+//configurando o template engine
+server.set('view engine', 'mustache');
+server.set('views',path.join(__dirname,'views'));
+server.engine('mustache', mustache());
+
+
+server.use('/static',express.static(path.join(__dirname,'../public'))); // torna a pasta publica estatica e acessivel
 server.use('/', mainRoutes); //usar as rotas de outro arquivo
 server.use('/painel', painelRoutes); // atencao nos prefixos
 

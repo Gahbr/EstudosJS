@@ -4,6 +4,7 @@ tsc -init
 npm install --save-dev @types/node
 tsc -w para entrar em watch mode e atualizar automaticamente
 npm install express & npm install @types/express
+npm install mustache-express & npm install --save-dev @types/mustache-express
 obs: npm install para instalar todas as dependencias citadas no .json
 
 
