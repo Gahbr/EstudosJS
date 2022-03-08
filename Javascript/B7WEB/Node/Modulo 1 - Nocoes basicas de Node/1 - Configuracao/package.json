@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "sudo nodemon src/server.ts"
+    "start-dev": "sudo nodemon -e ts,json,mustache src/server.ts"
   },
   "author": "gabriel ribeiro",
   "license": "ISC",

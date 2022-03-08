@@ -1,0 +1,32 @@
+{{>partials/header}}
+    Hello, I'm {{user.name}} and I'm {{user.age}} years old. <br>
+    
+
+    {{#showOld}} {{! condicional }}
+    You are old as fuck
+    {{/showOld}}
+
+    {{^showOld}}
+    Not too old.
+    {{/showOld}}
+    <hr>
+
+    <h2>Produtos</h2>
+    <ul>
+    {{#products}}
+       {{>partials/productItem}}
+    {{/products}}
+    </ul>
+    <hr/>
+
+    <ul>
+        {{#frasesDoDia}}
+        <li> {{.}} </li>
+        {{/frasesDoDia}}
+
+        {{^frasesDoDia}} {{! caso não tenha nada declarado }}
+        Não há frases hoje.
+        {{/frasesDoDia}}
+    </ul>
+
+{{>partials/footer}}

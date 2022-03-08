@@ -7,14 +7,36 @@ router.get('/', (req: Request, res:Response)=>{
     //organizar as informações desses produtos
     //envia para o template engine
 
-    res.render('home'); //renderizar o home.mustache
-    });
+    let user = {
+        name : 'Passarosuke',
+        age:9
+    };
+    let showOld :boolean = false;
+    user.age>50 ? showOld=true : showOld=false;
+
+    res.render('pages/home',{
+        user,
+        showWelcome: true,
+        showOld,
+        products: [
+            {title:'Produto x',price:10},
+            {title:'Produto y',price:15},
+            {title:'Produto w',price:20}
+        ],
+        frasesDoDia: [
+            'Kisama ka',
+            'Peck peck'
+        ]
+
+    }); //renderizar o home.mustache
+ });
+
 router.get('/contato', (req: Request, res:Response)=>{
-res.send('Formulario de contato')
+res.render('pages/contato');
 });
 
 router.get('/sobre', (req: Request, res:Response)=>{
-res.send('Pagina institucional sobre a empresa')
+res.render('pages/sobre');
 });
 
 export default router;
