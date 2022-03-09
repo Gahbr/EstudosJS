@@ -3,6 +3,9 @@ import mainRoutes from './routes/index';
 import painelRoutes from './routes/painel';
 import path from 'path';
 import mustache from 'mustache-express';
+import dotenv from 'dotenv';
+
+dotenv.config(); // configurando as variacoes de ambiente .env
 
 const server = express ();
 
@@ -24,7 +27,7 @@ server.use((req:Request,res : Response)=>{ //erro 404
 })
 
 
-server.listen(80); //abre o server na porta 
+server.listen(process.env.PORT); //abre o server na porta de acordo com o .env
 
 
 
