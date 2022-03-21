@@ -3,6 +3,7 @@ import {sequelize} from '../instances/mysql';
 import { Product } from '../models/Product';
 import { User } from '../models/User';
 import {Op} from 'sequelize'
+import { userInfo } from 'os';
 
 
 
@@ -39,7 +40,6 @@ export const idadeAction = (req: Request, res: Response) => {
 
 
 export const novoUsuario = async (req:Request,res:Response) =>{
-  
     let { nome, age } = req.body;
 
     if (age == "") {
@@ -47,7 +47,39 @@ export const novoUsuario = async (req:Request,res:Response) =>{
     }
 
     const user = await User.create({ name: nome, age: age });
-
     res.redirect("/");
+}
 
+export const aumentarIdade = async (req:Request, res:Response)=>{
+
+    let id:string  = req.params.id
+    let results = await User.findAll({ where: { id:id }});
+
+    if(results.length > 0 ){
+        let usuario = results[0];
+        usuario.age += 1;
+        await usuario.save();
+    }
+   
+    
+    res.redirect('/')
+}
+
+export const excluirUsuario = async (req:Request, res:Response)=>{
+   let meuId : string = req.params.id;
+   await User.destroy( {where: { id:meuId }})
+    res.redirect('/')
+}
+
+export const diminuirIdade = async (req:Request, res:Response)=>{
+    let meuId: string = req.params.id;
+    let results =  await User.findAll( {where: { id: meuId}});
+
+    if (results.length > 0){
+        let usuario = results[0];
+        usuario.age -= 1;
+        await usuario.save();
+    }
+   
+    res.redirect('/')
 }

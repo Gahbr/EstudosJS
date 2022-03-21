@@ -3,42 +3,15 @@ import {sequelize} from '../instances/mysql';
 import { Product } from '../models/Product';
 import { User } from '../models/User';
 import {Op} from 'sequelize'
+import { resourceLimits } from 'worker_threads';
 
 export const home = async(req: Request, res: Response)=>{
-/*    
-//build + save
-const user = User.build({
-    name: "Lil'keet",
-    
-})
-// await user.save(); para salvar
-  */
 
-/* //create 
-const user = await User.create({
-    name:'Peckmaster',
-    age:99
-});
-console.log("nome: "+ user.name);
-console.log(user.age);
 
- */
+    let adicionar = 10;
 
-   /* 
-   testando conexao com DB
-    try {
-        await sequelize.authenticate();
-        console.log("Conexão estabelecida com sucesso.");
-        
-    } catch (error) {
-        console.log("Deu erro: ", error);
-        
-    }
- */
-
-    let users = await User.findAll();
-  
-    
+    //listar 
+    let users = await User.findAll(); 
     //--------------------------
     let age: number = 90;
     let showOld: boolean = false;
@@ -56,8 +29,9 @@ console.log(user.age);
         showOld,
         products: list,
         expensives: expensiveList,
-        frasesDoDia: [],users
-
-        
+        frasesDoDia: [],
+        users,
+        adicionar
+       
     });
 };
