@@ -7,8 +7,11 @@ import { resourceLimits } from 'worker_threads';
 
 export const home = async(req: Request, res: Response)=>{
 
-
-    let adicionar = 10;
+    // let usuario = await User.findOne({ where : { id: 3}})
+   // const [usuario, created] = await User.findOrCreate({ where: { name: 'passarovsky'},defaults:{name:'ching', age: 80}});
+ 
+    
+    
 
     //listar 
     let users = await User.findAll(); 
@@ -30,8 +33,8 @@ export const home = async(req: Request, res: Response)=>{
         products: list,
         expensives: expensiveList,
         frasesDoDia: [],
-        users,
-        adicionar
+        users
+        
        
     });
 };
