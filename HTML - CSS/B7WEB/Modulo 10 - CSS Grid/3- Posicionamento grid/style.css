@@ -1,0 +1,28 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.container { 
+    height: 800px;
+    display:grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-gap: 10px;
+    background-color: lightgrey;
+    grid-auto-rows: 100px;
+    justify-content: end;
+    align-content: end;
+  
+}
+
+.item{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
