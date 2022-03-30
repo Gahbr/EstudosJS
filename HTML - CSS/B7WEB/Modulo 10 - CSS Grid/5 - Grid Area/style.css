@@ -1,0 +1,36 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: white;
+    grid-gap: 10px;
+   /*  grid-template-areas:
+        "item1 item2 item3"
+        "item4 item5 item6"
+        "item7 item8 item9"; */
+}
+
+.item{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.item1{
+    grid-area: 1 / 1 / 4 / 3;
+}
+
+.item6{
+   grid-row: 4 / 6;
+   grid-column: 2 / 4;
+}

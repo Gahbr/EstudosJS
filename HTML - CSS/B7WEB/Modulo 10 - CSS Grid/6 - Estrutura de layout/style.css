@@ -1,0 +1,49 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
+
+.container{
+    background-color: #ccc;
+    display: grid;
+    grid-gap:10px;
+    grid-template-areas: 
+    "header header header header " 
+    "menu content content content "
+    "ad content content content"
+    "footer footer footer footer"
+    ;
+
+}
+
+.item{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: menu;
+}
+
+section{
+    grid-area: content;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.anun{
+    grid-area: ad;
+}
