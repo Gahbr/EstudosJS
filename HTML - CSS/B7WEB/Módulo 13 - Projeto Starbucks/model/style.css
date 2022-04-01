@@ -1,0 +1,8 @@
+*{ /* para todos os elementos da pagina */
+    box-sizing: border-box; /* width será a soma do conteúdo com a borda e o padding. */
+}
+
+
+body{
+    margin: 0px;
+}
