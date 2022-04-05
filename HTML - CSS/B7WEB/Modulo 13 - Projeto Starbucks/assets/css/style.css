@@ -224,6 +224,8 @@ h2{
     background-size: cover;
 }
 
+/* area 4 */
+
 .area4{
     display: grid;
     grid-template-columns: 450px 1fr;
@@ -243,4 +245,24 @@ h2{
     background-image: url('../images/bg3.jpg');
     background-position: left;
     
+}
+
+.area5{
+    background-image: url('../images/bg4.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 80px;
+   
+
+}
+footer a {
+    
+    color: #fff;
 }
