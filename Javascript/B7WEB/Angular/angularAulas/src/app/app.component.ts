@@ -20,4 +20,16 @@ export class AppComponent {
   
   ];
   nomePrincipal = this.nomes[0];
+  corPrincipal = '#0000ff';
+  trocarCor = (cor: string) =>{
+    this.corPrincipal = cor;
+  }
+  trocarNome =  (novoNome:any) =>{
+    this.nomePrincipal = novoNome;
+  } 
+
+  clicou = function(pessoa: Pessoa){
+    alert("clicou em " + pessoa.nome);
+  }
+ 
 }

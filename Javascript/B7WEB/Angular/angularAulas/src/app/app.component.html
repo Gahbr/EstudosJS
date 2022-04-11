@@ -12,9 +12,20 @@
   <p> Total de nomes : {{nomes.length}}</p>
   <h2>O nome principal é {{nomePrincipal.nome}}</h2>
 
+  <input type="text" #nomeInput (keyup.enter)="0"/>
+  <p>Variavel: {{nomeInput.value}}</p>
+
   <ul>
-    <li *ngFor = "let item of nomes">{{item.nome}} - {{item.idade}} - {{item.getTipo()}}</li>
+    <li *ngFor = "let item of nomes" [style.color]="corPrincipal" (click) = "clicou(item)">{{item.nome}} - {{item.idade}} - {{item.getTipo()}}</li>
   </ul>
   
+  <p *ngIf="nomes.length > 4" >Tem muitos nomes cadastrados</p>
+
+  <input type="text" name="" value="{{nomePrincipal.nome}}" >
+  <input type="text" [value]="nomePrincipal.nome">
+
+  <div [style]="{width:'100px', fontSize:'20px', backgroundColor:'green'}">CHING</div> <br/>
+  <button (click)="trocarCor('#0000ff')">Colocar azul</button>
+  <button (click)="trocarCor('#ff0000')">Colocar vermelho</button>
 </body>
 </html>
