@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exemplo01';
+
+  exibirTexto: boolean = false;
+
+  //diretiva ngif
+  acaoNgIf(){
+   this.exibirTexto = !this.exibirTexto
+  }
+
+  //diretiva ngfor
+  cursos = ["HTML & CSS", "PHP baśico", "PHP Avançado", "Angular"];
+
+  //diretiva ngSwitch
+  curso_selecionado = "Angular";
+
+  //diretiva ngClass
+  ligada: boolean = false;
+
+
 }
