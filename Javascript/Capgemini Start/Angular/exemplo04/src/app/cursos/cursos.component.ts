@@ -7,6 +7,7 @@ import { CursosService } from './cursos.service';
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
+
 export class CursosComponent implements OnInit {
 
   //atributos
