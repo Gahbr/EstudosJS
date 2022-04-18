@@ -43,7 +43,8 @@ editar(id:number){
   this.curso = new Curso(
     this.vetorCursos[id].nomeCurso,
     this.vetorCursos[id].valorCurso,
-    this.vetorCursos[id].areaCurso)
+    this.vetorCursos[id].areaCurso
+    )
 }
 
 //atualizar
