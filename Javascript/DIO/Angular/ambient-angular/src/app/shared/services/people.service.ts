@@ -29,6 +29,6 @@ export class PeopleService {
       age:69
     },
   ]
-    return of()
+    return of(peopleArray)
   }
 }
