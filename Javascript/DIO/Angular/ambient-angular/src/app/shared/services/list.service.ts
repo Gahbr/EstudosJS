@@ -15,7 +15,7 @@ export class ListService {
   apiUrl= 'https://rickandmortyapi.com/api/character'
   constructor(private httpClient : HttpClient) { }
 
-  getList(): Observable<ApiResponse[]>{
-    return this.httpClient.get<ApiResponse[]>(this.apiUrl)
+  getList(): Observable<any>{
+    return this.httpClient.get<any>(this.apiUrl)
   }
 }

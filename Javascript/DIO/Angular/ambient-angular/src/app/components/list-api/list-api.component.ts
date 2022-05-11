@@ -7,7 +7,7 @@ import { ListService } from 'src/app/shared/services/list.service';
   styleUrls: ['./list-api.component.scss']
 })
 export class ListApiComponent implements OnInit {
-  personagens= []
+  personagens: Array<any> = [];
   constructor(private listService : ListService) { }
 
   ngOnInit(): void {
@@ -16,7 +16,9 @@ export class ListApiComponent implements OnInit {
 
   getList(){
     this.listService.getList().subscribe(result =>{
-      this.personagens = result.results;
+      this.personagens = result?.results;
+      
+      
       
       
     })
