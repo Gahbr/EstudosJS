@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {PeopleService} from './shared/services/people.service';
 import { AppComponent } from './app.component';
-import { MarcaTextoDirective } from './directives/marca-texto.directive';
+import { MarcaTextoDirective } from './shared/directives/marca-texto.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { MarcaTextoDirective } from './directives/marca-texto.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
