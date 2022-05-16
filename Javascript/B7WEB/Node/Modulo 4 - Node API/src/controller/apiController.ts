@@ -72,6 +72,9 @@ export const randomPhrase = async(req: Request, res: Response) => {
     let list = await Phrase.findAll();
     let nRand = Math.floor(Math.random()*list.length);
     res.json(list[nRand]);
-   
-    
+}
+
+export const uploadFile = async(req: Request, res: Response) => {
+    console.log(req.file)
+    res.json({})
 }
