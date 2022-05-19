@@ -21,6 +21,9 @@ router.post('/frases', ApiController.createPhrase);
 router.put('/frases/:id', ApiController.updatePhrase);
 router.delete('/frases/:id', ApiController.deletePhrase);
 
-router.post('/upload',upload.single('avatar'), ApiController.uploadFile)
+router.post('/upload',upload.fields([
+    {name:'avatar', maxCount:1},
+    {name:'gallery', maxCount:3}
+]), ApiController.uploadFile);
 
 export default router;
