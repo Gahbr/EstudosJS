@@ -75,7 +75,17 @@ export const randomPhrase = async(req: Request, res: Response) => {
 }
 
 export const uploadFile = async(req: Request, res: Response) => {
-    console.log("ARQUIVO",req.file)
-    console.log("ARQUIVOs",req.files)
+    
+/*     const files = req.files as {
+        avatar: Express.Multer.File[];
+        gallery: Express.Multer.File[]
+    };
+
+    console.log("ARQUIVO",files.avatar) */
+    
+    console.log("file",req.file);
+    console.log("Files",req.files);
+    
+    
     res.json({})
 }
