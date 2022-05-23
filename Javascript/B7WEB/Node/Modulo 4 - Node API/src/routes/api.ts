@@ -14,8 +14,16 @@ import * as ApiController from "../controller/apiController";
 }) */
 
 const upload = multer({
-   storage: multer.memoryStorage() // salva na memoria em buffer
-});
+ //  storage: multer.memoryStorage() // salva na memoria em buffer
+      dest: './tmp',
+      fileFilter: (req, file, cb)=>{
+         const allowed  : string[] = ['image/jpg, image/jpeg, image/png'];
+         cb(null, allowed.includes(file.mimetype))
+     }
+            
+         
+      }
+);
 
 const router = Router();
 
