@@ -2,6 +2,8 @@ import {Request, Response} from 'express';
 import * as ApiController from './apiController';
 import {Phrase} from '../models/Phrase'
 import { Sequelize } from 'sequelize';
+import sharp from 'sharp';
+import { unlink } from 'fs/promises';
 
 export const ping = (req: Request, res: Response) => {
     res.json({pong:true});
@@ -83,9 +85,21 @@ export const uploadFile = async(req: Request, res: Response) => {
 
     console.log("ARQUIVO",files.avatar) */
     
-    console.log("file",req.file);
-    console.log("Files",req.files);
+if(req.file){
+    const filename = `${req.file.filename}.jpg`;
     
+    await sharp(req.file.path).resize(500).toFormat('jpeg')
+    .toFile(`./public/media/${filename}`);
+
+    await unlink(req.file.path)
+    res.json({image:`${filename}` });
+
+
+
+} else{
+    res.status(400);
+    res.json({error:'Arquivo inválido'})
+}
+
     
-    res.json({})
 }
