@@ -1,0 +1,7 @@
+body {
+    background-color: #FF0000;
+    
+}
+input[type="text"] {
+    width: 500px;
+  }
