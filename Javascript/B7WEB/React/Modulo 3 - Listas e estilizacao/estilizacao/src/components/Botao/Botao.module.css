@@ -1,0 +1,17 @@
+.square{
+    background-color: darkred;
+    padding: 30px;
+}
+
+.botao{
+    background-color: blue;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.subtitle{
+    color: darkgreen;
+}
