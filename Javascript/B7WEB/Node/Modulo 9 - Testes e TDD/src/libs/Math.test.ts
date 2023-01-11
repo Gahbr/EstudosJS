@@ -24,4 +24,18 @@ describe('Testando a biblioteca Math', ()=>{
         const response2 = Math.div(3,0)
         expect(response2).toBe(false);
     })
+
+    // para testar apenas a função especifica ---- it.only()
+    it("check the length of the string" , ()=>{
+        const response = 'DENIED';
+        expect(response).toHaveLength(6)
+    })
+
+    it.only('should check if the property email exists', () => {
+        const response = {
+            name: 'Bruce',
+            email:'bruce@batmail.com'
+        }
+        expect(response).toHaveProperty('email')
+    })
 })
