@@ -31,7 +31,7 @@ describe('Testando a biblioteca Math', ()=>{
         expect(response).toHaveLength(6)
     })
 
-    it.only('should check if the property email exists', () => {
+    it('should check if the property email exists', () => {
         const response = {
             name: 'Bruce',
             email:'bruce@batmail.com'
