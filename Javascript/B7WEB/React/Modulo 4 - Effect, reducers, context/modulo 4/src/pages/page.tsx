@@ -16,13 +16,15 @@ const Page = () => {
 
   
 const handleAddClick = () => {
+ 
+if(input.length > 0 ){
   dispatch({
     type:'add',
     payload: {
       text: input
     }
   })
-
+}
   setInput("")
 };
 const handleEditClick = (idValue: number) => {
@@ -33,20 +35,23 @@ const handleEditClick = (idValue: number) => {
       newText: input 
     }
   })
-
- return (
-  <div>
-    yae
-  </div>
- )
 };
+const handleDeleteClick = (idValue: number): void => {
 
+    dispatch({
+      type:'remove',
+      payload: {
+        id: idValue
+      }
+    })
+  };
+  
 return (
   <div>
     <h1>TO-DO</h1>
     <ul>
       {list.map((item, index) =>(
-        <li key={index}>{item.id} | {item.text} | <input type="checkbox"></input> <button style={{margin:'10px'}} onClick={()=>handleEditClick(item.id)}>Editar</button></li>
+        <li key={index}>{item.id} | {item.text} | <input type="checkbox"></input> <button style={{margin:'10px'}} onClick={()=>handleEditClick(item.id)}>Editar</button> <button style={{margin:'10px'}} onClick={()=>handleDeleteClick(item.id)}>Deletar</button></li>
         
       ))}
     </ul>
