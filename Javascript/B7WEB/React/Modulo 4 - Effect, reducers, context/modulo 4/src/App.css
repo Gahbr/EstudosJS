@@ -2,7 +2,19 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+
   text-align: center;
+}
+body{
+  background-color: gainsboro;
+}
+
+#confirmButton{
+  background-color: aqua;
+}
+
+button{
+  margin:'10px'
 }
 
 .logo {
