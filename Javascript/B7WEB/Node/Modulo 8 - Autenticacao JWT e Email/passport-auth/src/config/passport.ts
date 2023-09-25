@@ -24,6 +24,7 @@ export const privateRoute = (
   next: NextFunction
 ) => {
   const authFunction = passport.authenticate("basic", (err : any, user : UserInstance) => {
+    req.user = user;
     return user ? next() : next(notAuthorizedJson);
   });
   authFunction(req,res,next);
