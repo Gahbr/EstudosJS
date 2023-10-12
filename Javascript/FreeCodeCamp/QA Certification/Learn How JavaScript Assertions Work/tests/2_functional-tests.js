@@ -1,9 +1,9 @@
-const chai = require("chai");
+const chai = require('chai');
 const assert = chai.assert;
 
-const server = require("../server");
+const server = require('../server');
 
-const chaiHttp = require("chai-http");
+const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
 suite("Functional Tests", function () {
@@ -69,13 +69,18 @@ suite("Functional Tests", function () {
   });
 });
 
-const Browser = require("zombie");
-Browser.site = "http://boilerplate-mochachai.gabsbach1.repl.co";
-
-suite("Functional Tests with Zombie.js", function () {
-  const browser = new Browser();
-  suiteSetup(function (done) {
+const Browser = require('zombie');
+Browser.site = "0.0.0.0:3000";
+const browser = new Browser();
+ suiteSetup(function (done) {
     return browser.visit("/", done);
+  });
+suite('Functional Tests with Zombie.js', function () {
+  this.timeout(5000);
+  suite('Headless browser', function () {
+    test('should have a working "site" property', function() {
+      assert.isNotNull(browser.site);
+    });
   });
 
   suite('"Famous Italian Explorers" form', function () {
@@ -92,7 +97,6 @@ suite("Functional Tests with Zombie.js", function () {
       });
     });
     // #6
-
     test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
       browser.fill('surname', 'Vespucci').then(() => {
         browser.pressButton('submit', () => {
