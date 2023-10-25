@@ -22,10 +22,21 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session())
-
+/* app.use((req, res, next) => {
+  res.status(404)
+    .type('text')
+    .send('Not Found');
+}); */
 
 app.set('view engine', 'pug');
 app.set('views', './views/pug');
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+};
 
 
 myDB(async client =>{
@@ -60,17 +71,28 @@ myDB(async client =>{
     )
   }))
 
-  app.route('/profile').get((req,res)=>{
-    res.render('profile')
+  app.route('/add').get((req,res)=>{
+    myDatabase.insertOne({username:'admin', password:'123'})
+    res.send('user added')
+  });
+
+  app.route('/profile').get(ensureAuthenticated, (req,res)=>{
+    res.render('profile', {username: req.user.username})
   });
 
   app.route('/login').post((req,res)=>{
-    var user = req.body.username;
-    var pass = req.body.password;
     passport.authenticate('local',{failureRedirect:'/'})
-    res.redirect('/');
+    res.redirect('/profile');
 
   });
+
+  app.route('/logout').get((req, res) => {
+    req.logout(function(err){
+      if(err) return next(err);
+      res.redirect('/');
+    });
+   
+});
 
 }).catch(e=>{
   app.route('/').get((req,res)=>{
