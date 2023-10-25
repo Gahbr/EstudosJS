@@ -7,6 +7,8 @@ const session = require('express-session');
 const passport = require('passport');
 const app = express();
 const { ObjectID } = require('mongodb');
+const LocalStrategy = require('passport-local');
+
 
 fccTesting(app); //For FCC testing purposes
 app.use('/public', express.static(process.cwd() + '/public'));
@@ -32,7 +34,8 @@ myDB(async client =>{
   app.route('/').get((req,res)=>{
     res.render('index', {
       title:"Connected to Database",
-      message:"Please login"
+      message:"Please login",
+      showLogin:true
     })
   });
 
@@ -45,7 +48,30 @@ myDB(async client =>{
     })
    
   });
-  
+
+  passport.use(new LocalStrategy((username, password, done) =>{
+    myDatabase.findOne({username:username}, (err,user)=>{
+      console.log(`User ${username} attempted to log in.`);
+      if(err) return done(err);
+      if(!user) return done(null, false);
+      if(password !== user.password) return done(null, false);
+      return done(null, user);
+    }
+    )
+  }))
+
+  app.route('/profile').get((req,res)=>{
+    res.render('profile')
+  });
+
+  app.route('/login').post((req,res)=>{
+    var user = req.body.username;
+    var pass = req.body.password;
+    passport.authenticate('local',{failureRedirect:'/'})
+    res.redirect('/');
+
+  });
+
 }).catch(e=>{
   app.route('/').get((req,res)=>{
     res.render('index', {
