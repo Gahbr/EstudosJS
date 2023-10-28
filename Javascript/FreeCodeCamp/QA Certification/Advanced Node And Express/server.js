@@ -1,109 +1,47 @@
-'use strict';
-require('dotenv').config();
-const express = require('express');
-const myDB = require('./connection');
-const fccTesting = require('./freeCodeCamp/fcctesting.js');
-const session = require('express-session');
-const passport = require('passport');
+"use strict";
+require("dotenv").config();
+const express = require("express");
+const myDB = require("./connection");
+const fccTesting = require("./freeCodeCamp/fcctesting.js");
+const session = require("express-session");
+const passport = require("passport");
 const app = express();
-const { ObjectID } = require('mongodb');
-const LocalStrategy = require('passport-local');
+const routes = require("./routes.js");
+const auth = require("./auth.js");
 
 
 fccTesting(app); //For FCC testing purposes
-app.use('/public', express.static(process.cwd() + '/public'));
+app.use("/public", express.static(process.cwd() + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(session({
-  secret:process.env.SESSION_SECRET,
-  resave: true,
-  saveUnitialized: true,
-  cookie: {secure:false}
-}))
-app.use(passport.initialize());
-app.use(passport.session())
-/* app.use((req, res, next) => {
-  res.status(404)
-    .type('text')
-    .send('Not Found');
-}); */
-
-app.set('view engine', 'pug');
-app.set('views', './views/pug');
-
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/');
-};
-
-
-myDB(async client =>{
-  const myDatabase = await client.db('database').collection('users');
-
-  app.route('/').get((req,res)=>{
-    res.render('index', {
-      title:"Connected to Database",
-      message:"Please login",
-      showLogin:true
-    })
-  });
-
-  passport.serializeUser((user,done)=>{
-    done(null,user._id)
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUnitialized: true,
+    cookie: { secure: false },
   })
-  passport.deserializeUser((id,done)=>{
-    myDB.findOne({_id:new ObjectID(id)}, (err,doc)=>{
-      done(null, doc)
-    })
-   
-  });
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-  passport.use(new LocalStrategy((username, password, done) =>{
-    myDatabase.findOne({username:username}, (err,user)=>{
-      console.log(`User ${username} attempted to log in.`);
-      if(err) return done(err);
-      if(!user) return done(null, false);
-      if(password !== user.password) return done(null, false);
-      return done(null, user);
-    }
-    )
-  }))
+app.set("view engine", "pug");
+app.set("views", "./views/pug");
 
-  app.route('/add').get((req,res)=>{
-    myDatabase.insertOne({username:'admin', password:'123'})
-    res.send('user added')
-  });
-
-  app.route('/profile').get(ensureAuthenticated, (req,res)=>{
-    res.render('profile', {username: req.user.username})
-  });
-
-  app.route('/login').post((req,res)=>{
-    passport.authenticate('local',{failureRedirect:'/'})
-    res.redirect('/profile');
-
-  });
-
-  app.route('/logout').get((req, res) => {
-    req.logout(function(err){
-      if(err) return next(err);
-      res.redirect('/');
+myDB(async (client) => {
+  const myDatabase = await client.db("database").collection("users");
+  routes(app, myDatabase);
+  auth(app, myDatabase);
+}).catch((e) => {
+  app.route("/").get((req, res) => {
+    res.render("index", {
+      title: e,
+      message: "Unable to connect to database",
     });
-   
-});
-
-}).catch(e=>{
-  app.route('/').get((req,res)=>{
-    res.render('index', {
-      title:e,
-      message:"Unable to connect to database"
-    })
   });
-})
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log('Listening on port ' + PORT);
+  console.log("Listening on port " + PORT);
 });
