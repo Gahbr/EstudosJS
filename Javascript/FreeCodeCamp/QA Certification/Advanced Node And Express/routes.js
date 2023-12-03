@@ -15,6 +15,7 @@ module.exports = async function (app, myDatabase) {
       message: "Please login",
       showLogin: true,
       showRegistration: true,
+      showSocialAuth: true,
     });
   });
   app.route("/add").get((req, res) => {
@@ -66,4 +67,20 @@ module.exports = async function (app, myDatabase) {
     req.logout();
     res.redirect("/");
   });
+
+  app.route("/auth/github")
+  .get(passport.authenticate("github"))
+;
+  app
+    .route("/auth/github/callback")
+    .get(
+      passport.authenticate("github", { failureRedirect: "/" }),
+      (req, res) => {
+        res.redirect("/profile");
+      }
+    );
+
+    app.route("/chat")
+  .get(passport.authenticate("github"))
+;
 };

@@ -11,7 +11,6 @@ module.exports = function (app, myDatabase) {
         myDatabase.findOne({_id:new ObjectID(id)}, (err,doc)=>{
           done(null, doc)
         })
-       
       });
     
       passport.use(new LocalStrategy((username, password, done) =>{
