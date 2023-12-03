@@ -16,11 +16,12 @@ module.exports = function (app) {
       // Assuming you have a convert function in convertHandler
       const returnNum = convertHandler.convert(initNum, initUnit);
       const returnUnit = convertHandler.getReturnUnit(initUnit);
+      const returnUnitLetter = convertHandler.spellOutUnit(initUnit);
       const string = convertHandler.getString(
         initNum,
         initUnit,
         returnNum,
-        returnUnit
+        returnUnitLetter
       );
       res
         .json({ initNum, initUnit, returnNum, returnUnit, string })
