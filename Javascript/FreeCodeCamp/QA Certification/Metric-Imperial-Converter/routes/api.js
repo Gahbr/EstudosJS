@@ -21,7 +21,7 @@ module.exports = function (app) {
         initNum,
         initUnit,
         returnNum,
-        returnUnitLetter
+        returnUnit
       );
       res
         .json({ initNum, initUnit, returnNum, returnUnit, string })
